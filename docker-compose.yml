@@ -1,0 +1,16 @@
+services:
+  app:
+    build: .
+    container_name: rate_limiter_app
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+    depends_on:
+      - redis
+  
+  redis:
+    image: redis:7
+    container_name: rate_limiter_redis
+    ports:
+      - "6379:6379"

@@ -3,6 +3,9 @@ from contextlib import asynccontextmanager
 from redis.asyncio import Redis
 from time import time
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 TOKEN_REFILL_RATE = int(os.getenv("TOKEN_REFILL_RATE"))
 BUCKET_CAPACITY = int(os.getenv("BUCKET_CAPACITY"))
